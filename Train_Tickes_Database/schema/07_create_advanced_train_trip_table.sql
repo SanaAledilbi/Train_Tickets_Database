@@ -2,14 +2,15 @@
 -- Stores extended train trip information with pricing
 
 CREATE TABLE AdvancedTrainTrip (
-    tripID NUMBER,
-    trainID NUMBER(3),
-    DepartureStation VARCHAR2(50),
-    ArrivalStation VARCHAR2(50),
+    TripID INT,
+    trainID INT,
+    ArrivalStation VARCHAR(50),
+    DepartureStation VARCHAR(50),
     DepartureDateTime TIMESTAMP,
     ArrivalDateTime TIMESTAMP,
-    TicketPrice NUMBER(10,2),
-    className VARCHAR2(20),
-    -- Add primary key and foreign keys
-    CONSTRAINT fk_classname_AD_Trip FOREIGN KEY (className) REFERENCES TicketType(className)
+    className VARCHAR(50)
+    TicketPrice INT,
+    
+    CONSTRAINT fk_trainID foreign key(TripID) references TrainTrip (TripID),
+    Constraint fk_TripID foreign key (trainID) references train (trainID) 
 );
