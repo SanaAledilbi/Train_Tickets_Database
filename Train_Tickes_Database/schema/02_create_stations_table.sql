@@ -2,7 +2,7 @@
 -- Stores information about train stations
 
 CREATE TABLE Stations (
-    StationID CHAR(4) PRIMARY KEY,
-    StationName VARCHAR2(50),
-    -- Add other columns based on your schema
+    StationID VARCHAR(3) NOT NULL,
+    StationName VARCHAR(100) NOT NULL,
+    CONSTRAINT Station ID PRIMARY KEY ( StationID ) 
 );
